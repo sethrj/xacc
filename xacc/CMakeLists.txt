@@ -93,6 +93,7 @@ if(MPI_FOUND)
 endif()
 
 if(XACC_REMOTE_ACCELERATORS)
+  target_include_directories(xacc PUBLIC accelerator/remote PRIVATE ${CPR_INCLUDE_DIRS})
   target_link_libraries(xacc PRIVATE cpr::cpr)
 endif()
 
